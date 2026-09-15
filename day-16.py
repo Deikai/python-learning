@@ -124,3 +124,5 @@ def calculate_total(price, quantity):
     return total
 
 print(calculate_total(10, 3))
+
+#Dia 16 completado
