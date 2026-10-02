@@ -61,3 +61,82 @@ def absolute_value(number):
 def calculate_discount(price, discount):
     return(price - (discount / 100) * price )
 
+def calculate_bill(bill, tip_porcentage):
+    return bill + (tip_porcentage / 100) * bill
+
+def calculate_total(price, discount, tip_porcentage):
+    discounted_price = calculate_discount(price, discount)
+    calculated_bill = calculate_bill(discounted_price, tip_porcentage)
+    return calculated_bill
+
+def calculate_average(a, b ,c):
+    return (a + b + c) / 3
+
+def is_adult(age):
+    if age >= 18:
+        return (True)
+    else:
+        return(False)
+
+def classify_age(age):
+    if age >= 18:
+        return("Adult")
+    elif age >= 13 and age <= 17 :
+        return("Teenager")
+    else:
+        return("Child")
+
+def calculate_grade(score):
+    if score >= 90:
+        return ("A")
+    elif score >= 80:
+        return("B")
+    elif score >= 70:
+        return("C")
+    elif score >= 60:
+        return("D")
+    else:
+        return("F")
+
+def can_vote(age,  is_citizen):
+    if age >= 18 and is_citizen: 
+        return (True)
+    else: 
+        return(False)
+
+def gets_discount(age, is_student):
+    if age >= 65 or is_student:
+        return(True) 
+    else:
+        return(False)
+
+def can_enter_event(age, has_ticket):
+    if age >= 18 and has_ticket:
+        return(True)
+    elif age >= 65:
+        return(True)
+    else:
+        return(False)
+
+def shipping_cost(total, is_member):
+    if total >= 50 or is_member:
+        return(0)
+    else:
+        return(7)
+
+def final_price(price, is_member):
+    discount = (10 / 100) * price
+    if is_member:
+        return(price - discount)
+    else:
+        return(price)
+
+def apply_bonus(salary, years):
+    bono = (10 / 100) * salary
+    if years >= 5:
+        return (salary + bono)
+    else: 
+        return salary 
+
+def purchase_total(price, is_member, shipping):
+    return 

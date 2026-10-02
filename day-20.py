@@ -12,4 +12,11 @@ except ValueError:
     print("Ingrese un valor valido. ")
 
 
-
+from operations import calculate_bill
+try:
+    bill = float(input("Ingrese el valor de la cuenta: "))
+    tip_porcentage = int(input("Ingrese el valor de la propina que desea dejar: "))
+    print(calculate_bill)
+except ValueError:
+    print("Ingrese un valor valido.")
+    
