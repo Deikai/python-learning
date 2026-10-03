@@ -184,3 +184,23 @@ def replace_spaces(text):
 
 def format_username(name):
     return name.strip().lower().replace(" ", "_")
+
+def starts_with_a(name):
+    return name.startswith("A")
+
+def ends_with_com(text):
+    return text.endswith(".com")
+
+def is_numeric(text):
+    return text.isdigit()
+
+def valid_pin(pin):
+    if len(pin) == 4 and pin.isdigit():
+        return True
+    else:
+        return False 
+
+def create_username(first_name, last_name):
+    first = first_name.lower().strip()
+    last = last_name.lower().strip()
+    return (first + "_" + last)
