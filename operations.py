@@ -1,3 +1,6 @@
+from pydoc import text
+
+
 def square(number):
     return(number * number)
 
@@ -140,3 +143,44 @@ def apply_bonus(salary, years):
 
 def purchase_total(price, is_member, shipping):
     return 
+
+def purchase_total(price, is_member, shipping):
+    discount = (10 / 100) * price
+
+    if is_member:
+        return (price - discount) + shipping
+    else:
+        return price + shipping
+
+def greet(name):
+    return("Hello, " + name + "!")
+
+def full_name(first_name, last_name):
+    return(first_name + " " + last_name)
+
+def name_length(name):
+    return(len(name))
+
+def is_long_name(name):
+    if len(name) > 7:
+        return(True)
+    else:
+        return(False)
+
+def shout(text):
+    return text.upper()
+
+def normalize_name(name):
+    return name.lower()
+
+def remove_spaces(text):
+    return text.strip()
+
+def clean_text(text):
+    return text.strip().lower()
+
+def replace_spaces(text):
+    return text.replace(" ", "-")
+
+def format_username(name):
+    return name.strip().lower().replace(" ", "_")
