@@ -18,3 +18,26 @@ def has_fruit(fruits, fruit):
         return True
     else:
         return False
+
+fruits.insert(1, "banana")
+
+fruits.pop(1)
+
+numbers = [10, 20, 30, 40]
+removed_numbers = numbers.pop(2)
+
+def total_prices(prices):
+    return sum(prices)
+
+numbers = [10, 50, 20, 5]
+max(numbers)
+min(numbers)
+
+def highest_price(prices):
+    return max(prices)
+
+def analyze_prices(prices):
+    highest = max(prices)
+    lowest = min(prices)
+    return highest - lowest
+    
