@@ -93,4 +93,146 @@ def greater_than(numbers, limit):
         if number > limit:
             greater_than_seven.append(number)
     return greater_than_seven
+
+
+numbers = [4, 7, 10, 13, 18]
+for number in numbers:
+    if number == 10:
+        print("found")
+        break
+
+
+def contains_number(numbers, target):
+    for number in numbers:
+        if target == number:
+            return True
+
+    return False
+
+numbers = [1, 2, 3, 4, 5, 6]
+for number in numbers:
+    if number % 2 == 0:
+        continue
+    print(number)
+
+def positive_numbers(numbers):
+    positive = []
+    for number in numbers:
+        if number <= 0:
+            continue
+        positive.append(number)
+
+    return positive
+
+def first_greater(numbers, limit):
+    for number in numbers:
+        if number > limit:
+            return number
+
+    return None
+
+def first_long_word(words, min_lenght):
+    for word in words:
+        if len(word) > min_lenght:
+            return word
+    
+    return None
+
+def first_starts_with(words, letter):
+    for word in words:
+        if word.startswith(letter):
+            return word
+    
+    return None
+
+def count_long_words(words, min_lenght):
+    count = 0
+    for word in words:
+        if len(word) > min_lenght:
+            count = count + 1
+    
+    return count
+
+def count_starts_with(words, letter):
+    count = 0
+    for word in words:
+        if word.startswith(letter):
+            count = count + 1
+    
+    return count
+
+def word_starting_with(words, letter):
+    starts = []
+    for word in words:
+        if word.startswith(letter):
+            starts.append(word)
+    
+    return starts
+
+def even_greater_than(numbers, limit):
+    even = []
+    for number in numbers:
+        if number % 2 == 0 and number > limit:
+            even.append(number)
+    
+    return even
+
+def sum_greater_than(numbers, limit):
+    count = 0
+    for number in numbers:
+        if number > limit: 
+            count = number + count
+
+    return count
+
+def average_greater_than(numbers, limit):
+    sum = 0
+    count = 0
+    for number in numbers:
+        if number > limit:
+            sum = number + sum
+            count = count + 1
+    if count == 0:
+        return None
+
+    average = sum / count     
+
+    return average
+
+def average_even(numbers):
+    sum = 0
+    count = 0
+    for number in numbers:
+        if number % 2 == 0:
+            sum = sum + number
+            count = count + 1
+
+    if count == 0:
+        return None
+
+    average = sum / count 
+    return average
+
+def longest_word(words):
+    longest = words[0]
+    if len(word) == 0:
+        return None
+
+    for word in words:
+        if len(word) > len(longest):
+            longest = word
+
+    return longest
+
+def largest_number(numbers):
+    if len(numbers) == 0:
+        return None
+    largest = numbers[0]
+
+
+    for number in numbers:
+        if number > largest:
+            largest = number
+
+    return largest
     
