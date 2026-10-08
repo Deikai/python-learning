@@ -70,3 +70,27 @@ for number in numbers:
     if number % 2 == 0:
         count = count + 1
         total = total + number
+
+def count_even(numbers):
+    count_even = 0
+    for number in numbers:
+        if number % 2 == 0:
+            count_even = count_even + 1
+
+    return count_even
+
+def sum_even(numbers):
+    sum_even = 0
+    for number in numbers:
+        if number % 2 == 0:
+            sum_even = sum_even + number 
+    
+    return sum_even
+
+def greater_than(numbers, limit):
+    greater_than_seven = []
+    for number in numbers:
+        if number > limit:
+            greater_than_seven.append(number)
+    return greater_than_seven
+    
