@@ -235,4 +235,97 @@ def largest_number(numbers):
             largest = number
 
     return largest
+
+def smallest_number(numbers):
+    if len(numbers) == 0:
+        return None
+    smallest = number [0]
     
+    for number in numbers:
+        if number < smallest:
+            smallest = number
+        
+    return smallest
+
+def min_max(numbers):
+
+    if len(numbers) == 0:
+        return None
+    minor = numbers[0]
+    bigger = numbers[0]
+
+    for number in numbers:
+        if number > bigger:
+            bigger = number
+
+    for number in numbers:
+        if number < minor:
+            minor = number
+    
+    return [minor, bigger]
+
+def min_max2(numbers):
+    if len(numbers) == 0:
+        return None
+    
+    bigger = numbers[0]
+    minor = numbers[0]
+    for number in numbers:
+        if number > bigger:
+            bigger = number
+        
+        if number < minor:
+            minor = number
+
+    return [minor, bigger]
+
+def count_occurrences(items, target):
+    count = 0
+    for item in items:
+        if target == item:
+            count = count + 1
+    return count 
+
+def remove_target(items, target):
+    new_list = []
+    for item in items:
+        if item == target:
+            continue
+        new_list.append(item)
+    return new_list
+
+def replace_target(items, target, replacement):
+    new_list = []
+    for item in items:
+        if target == item:
+            item = replacement
+        new_list.append(item)
+    return new_list
+
+def double_numbers(numbers):
+    new = []
+    for number in numbers:
+        number = number * 2
+        new.append(number)
+    return new
+
+def analyze_numbers(numbers):
+    if len(numbers) == 0:
+        return None
+    cantidad_pares = 0
+    suma_pares = 0
+    menor = numbers[0]
+    mayor = numbers[0]
+    
+    for number in numbers:
+        if number % 2 == 0:
+            cantidad_pares = cantidad_pares + 1
+            suma_pares = suma_pares + number
+
+        if number > mayor:
+            mayor = number
+
+        if number < menor:
+            menor = number
+
+    return [cantidad_pares, suma_pares, menor, mayor]
