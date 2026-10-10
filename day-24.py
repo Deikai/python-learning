@@ -139,6 +139,20 @@ def update_value(data, target_key, new_value):
 
 def analyze_data(data):
     new = {}
+    count = 0
+    numeric = 0
+    plus = 0
+    for key, value in data.items():
 
-    for item, value in data.items():
-        return 
+        if type(value) == str:
+            count = count + 1
+
+        if type(value) == int or type(value) == float:
+            numeric = numeric + 1
+            plus = plus + value
+      
+    new["total_keys"] = len(data)
+    new["string_values"] = count
+    new["numeric_values"] = numeric
+    new["numeric_sum"] = plus
+    return new 
