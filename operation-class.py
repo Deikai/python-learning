@@ -1,1 +1,0 @@
-from day-25 import average_grate, best_subject, worst_subject, passed_subject

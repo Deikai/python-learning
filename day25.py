@@ -56,10 +56,49 @@ def passed_subjects(student, minimum):
     return passed
 
 def grade_report(student):
-    new = {}
-    average = 0
-    best_subject = 0
-    worst_subject = 0
-    passed = 0
-    for subject, grade in student["grades"].item():
-        return
+    report = {}
+    
+    report["average"] = average_grade(student)
+    report["best_sub"] = best_subject(student)
+    report["worst_sub"] = worst_subject(student)
+    report["passed"] = passed_subjects(student, 13)
+
+    return report 
+
+def show_student_names(students):
+    for student in students:
+        print(student["name"])
+
+def find_student(students, name):
+    for student in students:
+        if student["name"] == name:
+            return student
+
+    return None
+
+def student_average_by_name(students,name):
+    student = find_student(students, name)
+    if student is None:
+        return None
+    
+    return average_grade(student)
+
+def student_report_by_name(students, name):
+    student = find_student(students, name)
+    if student is None:
+        return None
+    
+    return grade_report(student)
+
+def best_student(students):
+    best_average = None
+    best_name = None
+
+    for student in students:
+        average = average_grade(student)
+        if best_average is None or average > best_average:
+            best_average = average
+            best_name = student["name"]
+    
+    return best_name
+
