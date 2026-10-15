@@ -66,3 +66,30 @@ def inventory_value(products):
     for name, price, stock in products:
         total = total + price * stock
     return total
+
+def most_expensive_product(products):
+    highest_price = None
+    most_expensive = None
+    for name, price, stock in products:
+        if highest_price is None or highest_price < price:
+            highest_price = price
+            most_expensive = name
+    return most_expensive
+
+numbers = [1, 2, 3]
+numbers_tuple = tuple(numbers) # esto funciona para convertir una lista en una tupla
+
+number = (1, 2, 3)
+number_list = list(number) # hace lo mismo pero transforma la tupla en lista
+
+languages = ["Python", "JavaScript", "HTML"]
+languages_tuple = tuple(lenguages)
+
+language_tuple = ("Python", "JavaScript", "HTML")
+language_list = list(language_tuple)
+
+tools = ("Git", "Docker", "VS Code")
+tools_list = list(tools)
+tools_list[1] = "GitHub"
+tools = tuple(tools_list)
+
