@@ -56,14 +56,24 @@ class Developer(Employee):
     def work(self):
         print("Writing code.")
 
-developer1 = Developer("Ana", 70000, "Python")
-
 class Designer(Employee):
     def work(self):
-        print("Disigning interface")
+        print("Designing interface")
+    
+class Manager(Employee):
+    def work(self):
+        print("Managing team")  
 
 designer1 = Designer("Maria", 65000)
 designer1.work()
+developer1 = Developer("Ana", 70000, "Python")
+manager1 = Manager("Luis", 80000)
+
+employees = [developer1, designer1, manager1]
+
+for employee in employees:
+    employee.work()
+
 
 class Person:
     def __init__(self, name, age):
@@ -74,6 +84,25 @@ class Student(Person):
     def __init__(self, name, age, grade):
         super().__init__(name, age)
         self.grade = grade 
+    
 
 student1 = Student("Carlos", 20, 85)
 
+class Account:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+    
+    def show_balance(self):
+        print(self.balance)
+
+class SavingsAccount(Account):
+    def __init__(self, owner, balance, interest_rate):
+        super().__init__(owner, balance)
+        self.interest_rate = interest_rate
+    
+    def add_interest(self):
+        self.balance = (self.balance * self.interest_rate) + self.balance
+
+account1 = SavingsAccount("Ana", 1000, 0.05)
+account1.add_interest()
