@@ -106,3 +106,32 @@ class SavingsAccount(Account):
 
 account1 = SavingsAccount("Ana", 1000, 0.05)
 account1.add_interest()
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def speak(self):
+        print("Animal sound")
+
+class Dog(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+    
+    def speak(self):
+        print("Woof")
+
+class Cat(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+    
+    def speak(self):
+        print("Meow")
+
+dog1 = Dog("Max")
+cat1 = Cat("Luna")
+
+animals = [dog1, cat1]
+
+for animal in animals:
+    animal.speak()
