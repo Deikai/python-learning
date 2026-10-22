@@ -92,4 +92,3 @@ tools = ("Git", "Docker", "VS Code")
 tools_list = list(tools)
 tools_list[1] = "GitHub"
 tools = tuple(tools_list)
-
