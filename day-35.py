@@ -87,5 +87,11 @@ for name in expensive_product_names(products, 50):
     print(name)
 
 def discounted_prices(products, discount):
+    discount_amount = 0
     for product in products:
-        yield product 
+        discount_amount = product.price * (discount / 100)
+        final_price = product.price - discount_amount
+        yield final_price
+
+for price in discounted_prices(products, 10):
+    print(price)
