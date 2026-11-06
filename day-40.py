@@ -70,5 +70,25 @@ games = [
 ]
 with open("games.csv", "w", newline="") as file:
     writer = csv.writer(file, delimiter=";")
-    writer.writerow("name", "price")
+    writer.writerow(["name", "price"])
     writer.writerows(games)
+
+with open("games.csv", "r") as file:
+    games = csv.DictReader(file, delimiter=";")
+    for game in games:
+        price = int(game["price"])
+        if price > 35:
+            print(game["name"])
+
+with open("games.csv", "r") as file:
+    games = csv.DictReader(file, delimiter=";")
+    expensive_games = []
+    for game in games:
+        price = int(game["price"])
+        if price >= 50:
+            expensive_games.append(game) 
+
+with open("expensive_games.csv", "w") as file:
+    writer = csv.DictWriter(file, delimiter=";", fieldnames=["name", "price"])
+    writer.writeheader()
+    writer.writerows(expensive_games)
