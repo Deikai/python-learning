@@ -19,7 +19,7 @@ else:
 
 new_folder = Path("data/reports")             # crea la ruta 
 new_folder.mkdir(parents=True, exist_ok=True)  # con mkdir se crean las carpetas y con parents se crea la primera carpeta si es necesario
-                                               # con exist_ok le decimos que si la carpeta ya esta creada la deje y sino que la cree
+ # con exist_ok le decimos que si la carpeta ya esta creada la deje y sino que la cree
 report_path = new_folder / "sales.txt"
 print(report_path)
 
@@ -42,5 +42,32 @@ file_path.touch()
 file_path = new_folder / "summary.csv"
 file_path.touch()
 
-for item in new_folder.glob("*.txt"):
+for item in new_folder.glob("*.txt"): # este busca coincidencia dentro de la carpeta 
     print(item.name)
+
+for item in folder_path.rglob("*.txt"): # este busca coincidencias dentro de todas la carpeta y subcarpetas
+    print(item.name)
+
+old_name = new_folder / "notes.txt"
+new_name = new_folder / "python_notes.txt"
+old_name.rename(new_name) 
+
+file_path = new_folder / "summary.csv"
+if file_path.exists():
+    file_path.unlink()
+    print("File deleted")
+else:
+    print("File not found")
+
+test_folder = Path("temporary")
+test_folder.mkdir(exist_ok=True)
+if test_folder.is_dir():
+    test_folder.rmdir()
+    print("Folder deleted")
+
+current_folder = Path.cwd()
+print(current_folder)
+
+print(report_path.resolve()) 
+
+file_path = Path("data / report.txt")
