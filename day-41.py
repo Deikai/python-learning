@@ -71,3 +71,4 @@ print(current_folder)
 print(report_path.resolve()) 
 
 file_path = Path("data / report.txt")
+
